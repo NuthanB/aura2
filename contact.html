@@ -273,7 +273,7 @@
                             
                              </div>
                          </div><!-- section title end -->
-                         <form  class="ttm-contactform wrap-form clearfix" id="prenatalid" method="post" action="contact.php">
+                         <form  class="ttm-contactform wrap-form clearfix" id="prenatalid" method="post" >
                              <div class="row">
                                  <div class="col-md-6">
                                      <label>
@@ -447,7 +447,41 @@
     <script src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
     <script src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("prenatalid");
 
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Collect form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch(" http://localhost:3000/api/contact", { // Replace with your actual API URL
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert("Form submitted successfully!");
+        form.reset(); // Reset form after successful submission
+      } else {
+        alert("Error: " + result.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to send data. Please try again.");
+    }
+  });
+});
+
+</script>
     <!-- Javascript end-->
 
 </body>
