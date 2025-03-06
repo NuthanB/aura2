@@ -203,7 +203,7 @@
 		        
         <div class="head-img">
             <div class="head-container"  style="background: #e67f6081;">
-                <p  style="background: #e68060; color: white; font-size: 27px;">Breastfeeding Benefits Beyond the Bond</p>
+                <p  style="background: rgba(231, 217, 213, 0.5); color: #dd5228d3; font-size: 27px; text-align: center;">Breastfeeding Benefits Beyond the Bond</p>
             </div>
             <img src="./2023 Aura pictures/Breast-Feeding-4_wide.jpg" alt="Mother breastfeeding, emphasizing the benefits beyond the bond, in the Aura Breastfeeding Workshop.">
             <a href="https://rzp.io/l/9CT8CoLQnM"><button>Register Now</button></a>
@@ -313,53 +313,60 @@
                                     
                                  </div>
                              </div><!-- section title end -->
-                             <form  class="ttm-contactform wrap-form clearfix" id="prenatalid" method="post" action="breast-feeding.php">
-                                 <div class="row">
-                                     <div class="col-md-6">
-                                         <label>
-                                             <span class="text-input">
-                                                 <input name="name" type="text" value="" placeholder="Name" required="required">
-                                             </span>
-                                         </label>
-                                     </div>
-                                     <div class="col-md-6">
-                                         <label>
-                                             <span class="text-input">
-                                                 <input name="phone" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="10" placeholder="Mobile" required="required">
-                                             </span>
-                                         </label>
-                                     </div>
-                                     
-                                     <div class="col-md-6">
-                                         <label>
-                                             <span class="text-input">
-                                                 <input name="age" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" value="" placeholder="Age" required="required">
-                                             </span>
-                                         </label>
-                                     </div>
-                                     <div class="col-md-6">
-                                         <label>
-                                             <span class="text-input">
-                                                 <input name="city" type="text" value="" placeholder="City" required="required">
-                                             </span>
-                                         </label>
-                                     </div>
-                                     
-                                     
-                                     <div class="col-md-12">
-                                         <label>
-                                             <span class="text-input">
-                                                 <input name="email" type="email" value="" placeholder="Email" required="required">
-                                             </span>
-                                         </label>
-                                     </div>
-                                     
-                                
-                                     
-                                 </div>
-                                
-                                <input name="submit" type="submit"   class="submit ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-bgcolor-darkgrey" style=" background: #912f117c;" value="Register Now" style="float:right">
-                             </form>
+                             <form class="ttm-contactform wrap-form clearfix" id="prenatalid">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>
+                                            <span class="text-input">
+                                                <input name="name" type="text" value="" placeholder="Name" required="required">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>
+                                            <span class="text-input">
+                                                <input name="phone" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="10" placeholder="Mobile" required="required">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label>
+                                            <span class="text-input">
+                                                <input name="age" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" value="" placeholder="Age" required="required">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>
+                                            <span class="text-input">
+                                                <input name="city" type="text" value="" placeholder="City" required="required">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <label>
+                                            <span class="text-input">
+                                                <input name="email" type="email" value="" placeholder="Email" required="required">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label><strong>Session Type:</strong></label>
+                                        <div style="display: flex; gap: 15px; align-items: center;">
+                                            <label style="display: flex; align-items: center; gap: 5px;">
+                                                <input type="radio" name="session_type" value="Online" required> Online
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 5px;">
+                                                <input type="radio" name="session_type" value="Offline" required> Offline
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <input name="submit" type="submit" class="submit ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-bgcolor-darkgrey" style="background: #912f117c;" value="Register Now" style="float:right">
+                            </form>
                          </div>
                      
                      
@@ -673,7 +680,38 @@
     <script src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
     <script src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-
+    <script>
+        document.getElementById('prenatalid').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            // Get form data
+            const formData = new FormData(this);
+            const jsonData = Object.fromEntries(formData.entries());
+    
+            try {
+                const response = await fetch('http://localhost:3000/api/breastfeeding-workshop', { // Replace with actual API URL
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(jsonData),
+                });
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const data = await response.json();
+                console.log('Success:', data);
+                alert("Registration successful!"); // Show success message
+    
+            } catch (error) {
+                console.error('Error:', error);
+                alert("Error submitting the form. Please try again.");
+            }
+        });
+    </script>
+    
     <!-- Javascript end-->
 
 </body>

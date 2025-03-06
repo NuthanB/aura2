@@ -13,7 +13,7 @@ $headers = "From: $fromName <$fromEmail>\r\n";
 $headers .= "Reply-To: $fromEmail\r\n";
 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
-    $ToEmail = 'info@aurabirthingpartner.com'; 
+    $ToEmail = 'nuthanb23@gmail.com'; 
     $EmailSubject = 'Enquiry from Aura - Breastfeeding Workshop'; 
     $mailheader = "From: ".$_POST["email"]."\r\n"; 
     $mailheader .= "Reply-To: ".$_POST["email"]."\r\n"; 
