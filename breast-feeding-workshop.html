@@ -138,12 +138,15 @@
 
                                              
                                                     <li><a href="prenatal-yoga-and-fitness.html">Aura Prenatal Fitness</a></li>
-                                                    <li><a href="postnatal-yoga-and-fitness.html">Aura Postnatal Fitness</a></li>
+                                                    <!-- <li><a href="postnatal-yoga-and-fitness.html">Aura Postnatal Fitness</a></li> -->
                                                     <li><a href="labor-management-workshop.html">Aura Labor Management Workshop</a></li>
                                                     <li><a href="breast-feeding-workshop.html">Aura Breastfeeding Workshop</a></li>
                                                     <li><a href="newborn-care.html">Aura Infant Massage & Newborn Care</a></li>
                                                     <li><a href="postpartum-depression-care.html">Aura Postpartum Depression and Care </a></li>
-                                                    <li><a href="nutrition-and-diet-consultation.html">Aura Nutrition Care</a></li> </ul>
+                                                    <li><a href="nutrition-and-diet-consultation.html">Aura Nutrition Care</a></li>
+                                                    <li><a href="https://aura-birthing.vercel.app/login">Aura Moms Login</a>
+                                                 </ul>
+
                                           
                                             </li>
 											<li class="ft"><a href="#." >Instructors and <br> Birth Professionals <i class="fa fa-angle-down"></i></a>
@@ -206,7 +209,7 @@
                 <p  style="background: rgba(231, 217, 213, 0.5); color: #dd5228d3; font-size: 27px; text-align: center;">Breastfeeding Benefits Beyond the Bond</p>
             </div>
             <img src="./2023 Aura pictures/Breast-Feeding-4_wide.jpg" alt="Mother breastfeeding, emphasizing the benefits beyond the bond, in the Aura Breastfeeding Workshop.">
-            <a href="https://rzp.io/l/9CT8CoLQnM"><button>Register Now</button></a>
+            <a><button>Register Now</button></a>
         </div>
     <!--site-main start-->
     <div class="site-main mt-80 mb-100">
@@ -455,8 +458,6 @@
                                         <h4>Shaista</h4>
                                     </div>
                                 </div>
-        
-                                
                             </div>
                             <p class="text-slide">
                                 As a first time mother you have number of doubts and questions about what is right or wrong. The Breastfeeding workshop by Shree was definitely worth it. Educated and well prepared for my BF journey. The important aspects of BF were covered and I highly recommend if every mother wants to be self educated.
@@ -689,7 +690,7 @@
             const jsonData = Object.fromEntries(formData.entries());
     
             try {
-                const response = await fetch('https://aura-birthing.vercel.app/api/breastfeeding-workshop', { // Replace with actual API URL
+                const response = await fetch(' http://localhost:3000/api/breastfeeding-workshop', { // Replace with actual API URL
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
