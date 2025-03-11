@@ -2,8 +2,8 @@
     "cleanUrls": true,
     "rewrites": [
     {
-      "source": "/login/:path*",
-      "destination": "https://aura-birthing.vercel.app/login/:path*"
+      "source": "/login",
+      "destination": "https://aura-birthing.vercel.app/login"
     }
   ]
 }
