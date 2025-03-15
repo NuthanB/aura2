@@ -57,6 +57,112 @@
   
     gtag('config', 'G-EKZF0R8XQF');
   </script>
+     <style>
+        /* Responsive styling for Aura Breastfeeding Workshop form */
+    .text-left.with-desc.clearfix {
+      max-width: 100%;
+      padding: 0 15px;
+    }
+    
+    .title-header h2.title {
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: purple;
+    }
+    
+    .ttm-contactform.wrap-form {
+      padding: 15px;
+    }
+    
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+    }
+    
+    .col-md-6, .col-md-12 {
+      padding: 0 10px;
+      margin-bottom: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    /* Make the columns responsive */
+    @media (min-width: 768px) {
+      .col-md-6 {
+        width: 50%;
+      }
+      .col-md-12 {
+        width: 100%;
+      }
+    }
+    
+    .text-input {
+      display: block;
+      width: 100%;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    
+    /* Style for radio buttons */
+    div[style="display: flex; gap: 15px; align-items: center;"] {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 8px;
+    }
+    
+    label[style="display: flex; align-items: center; gap: 5px;"] {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+    
+    input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    
+    /* Submit button styling */
+    .submit.ttm-btn {
+      width: 50%;
+      background-color: purple !important;
+      opacity: 0.8;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    
+    .submit.ttm-btn:hover {
+      opacity: 1;
+    }
+    
+    /* Style for session type label */
+    .col-md-12 strong {
+      color: purple;
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    </style>
 </head>
 
 <body  style="background:#e6a3ec70">
@@ -245,7 +351,7 @@
                                     <h2 class="title">Book an Appointment</h2>
                                 </div>
                             </div><!-- section title end -->
-                            <form  class="ttm-contactform wrap-form clearfix" method="post" action="nutrition.php">
+                            <form  class="ttm-contactform wrap-form clearfix" method="post" id="prenatalid">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>
@@ -286,10 +392,22 @@
                                         </label>
                                     </div>
 									
-							
+                                    <div class="col-md-12" style="color: #c55258;">
+                                        <label style="color: #c55258;"><strong>Session Type:</strong></label>
+                                        <div style="display: flex; gap: 15px; align-items: center;">
+                                            <label style="display: flex; align-items: center; gap: 5px;">
+                                                <input type="radio" name="session_type" value="Online"
+                                                    required> Online
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 5px;">
+                                                <input type="radio" name="session_type" value="Offline"
+                                                    required> Offline
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                
-                               <input name="submit" type="submit"  class="submit ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-bgcolor-darkgrey" value="Book Now" style="float:right; background: #521f57a8  -- m">
+                               <input name="submit" type="submit"  class="submit ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-bgcolor-darkgrey" value="Book Now" style="background: #521f57a8  -- m">
                             </form>
                         </div>
                     </div>
@@ -445,7 +563,37 @@
     <script src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
     <script src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script>
+        document.getElementById('prenatalid').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
 
+            // Get form data
+            const formData = new FormData(this);
+            const jsonData = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('https://aura-birthing.vercel.app/api/nutrition-consultation', { // Replace with actual API URL
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(jsonData),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('Success:', data);
+                alert("Registration successful!"); // Show success message
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert("Error submitting the form. Please try again.");
+            }
+        });
+    </script>
     <!-- Javascript end-->
 
 </body>
