@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="images/new_logo.png" />
+
+<!-- bootstrap -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+
+<!-- animate -->
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+
+<!-- owl-carousel -->
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+
+<!-- fontawesome -->
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- themify -->
+<link rel="stylesheet" type="text/css" href="css/themify-icons.css"/>
+
+<!-- flaticon -->
+<link rel="stylesheet" type="text/css" href="css/flaticon.css"/>
+
+<link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+
+<link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+
+<!-- prettyphoto -->
+<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+
+<!-- shortcodes -->
+<link rel="stylesheet" type="text/css" href="css/shortcodes.css"/>
+
+<!-- main -->
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+<!-- responsive -->
+<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-EKZF0R8XQF');
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon</title>
+  <style>
+    :root {
+      --primary: #ae5a85;
+      --accent: #ffcbe6;
+      --text: #ad4f33;
+      --bg: #fff0f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .container {
+      animation: fadeIn 1.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .timer {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p, .timer {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <h1>💕 Something Beautiful is Coming Soon 💕</h1>
+    <p>We're working hard to bring you a caring new experience. Stay tuned!</p>
+    <!-- <div class="timer" id="countdown">Loading...</div> -->
+  </div>
+
+  <script>
+    // Countdown Timer to a future date
+    const countdown = document.getElementById('countdown');
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 5); // 5 days from now
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = launchDate - now;
+
+      if (diff <= 0) {
+        countdown.textContent = "We're Live!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>

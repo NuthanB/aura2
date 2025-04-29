@@ -563,9 +563,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const cardContainer = document.getElementById("cardContainer");
-    const loadMoreBtn = document.getElementById("loadMoreBtn");
-    const cards = document.querySelectorAll(".card");
+    // const cardContainer = document.getElementById("cardContainer");
+    // const loadMoreBtn = document.getElementById("loadMoreBtn");
+    // const cards = document.querySelectorAll(".card");
     const batchSize = 8;
     let visibleCount = 0;
   

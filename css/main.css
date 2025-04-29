@@ -2037,12 +2037,13 @@ ul li .icon-box.icon-style-border i{
 
   
 
-.stories-container {
-    margin: 50px;
+  .stories-container {
+    max-width: 90%;
+    margin: 50px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the minmax values based on your design */
-    grid-gap: 20px; /* Adjust the gap between cards */
-}
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 .back {
     background-color: rgb(37, 37, 37);
     transform: rotateY(180deg);
