@@ -59,20 +59,27 @@
   
     gtag('config', 'G-EKZF0R8XQF');
   </script>
-  <style>
+ <style>
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      
+      grid-template-columns: repeat(2, 1fr); /* Default: Mobile view */
+      gap: 1rem;
     }
-    @media (max-width: 600px) {
+  
+    @media (min-width: 768px) {
       .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-        overflow-x: auto;
+        grid-template-columns: repeat(3, 1fr); /* Tablet view */
+        padding: 2rem;
       }
     }
+  
+    @media (min-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr); /* Desktop view */
+        padding: 2.5rem;
+      }
+    }
+  
     .team-card {
       text-align: center;
       padding: 1rem;
@@ -87,23 +94,49 @@
     }
   
     .team-card img {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
       border-radius: 50%;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
   
     .team-card h4 {
       margin: 0.5rem 0 0.2rem;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: #333;
     }
   
     .team-card h6 {
       margin: 0;
-      font-size: 1rem;
+      font-size: 0.85rem;
       color: #777;
+    }
+  
+    @media (min-width: 768px) {
+      .team-card img {
+        width: 120px;
+        height: 120px;
+      }
+      .team-card h4 {
+        font-size: 1.1rem;
+      }
+      .team-card h6 {
+        font-size: 0.95rem;
+      }
+    }
+  
+    @media (min-width: 1024px) {
+      .team-card img {
+        width: 140px;
+        height: 140px;
+      }
+      .team-card h4 {
+        font-size: 1.2rem;
+      }
+      .team-card h6 {
+        font-size: 1rem;
+      }
     }
   
     .join-card {
@@ -113,7 +146,7 @@
       height: 100%;
       background-color: #e3f2fd;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       border-radius: 16px;
       text-align: center;
       padding: 1rem;
@@ -128,7 +161,15 @@
       text-decoration: none;
       color: #0d47a1;
     }
+  
+    @media (min-width: 768px) {
+      .join-card {
+        font-size: 1.3rem;
+      }
+    }
   </style>
+  
+  
 </head>
 
 <body  style="background:#FAF5EB">
@@ -283,7 +324,7 @@
                     <div class="team-card">
                       <img src="./2023 Aura pictures/Shree1.jpeg" alt="Shree LP, Founder and Educator">
                       <h4>Ms. Shree LP</h4>
-                      <h6>Founder &amp; Childbirth Educator</h6>
+                      <h6>Founder  &<br> Childbirth Educator</h6>
                     </div>
                   
                     <div class="team-card">
@@ -313,6 +354,14 @@
                         <h4>Dr. Preeti Jha </h4>
                         <h6>BDS, MDS<br>
                             Paediatric Dentist <br></h6>
+                      </div>
+                      <div class="team-card">
+                        <img src="./2023 Aura pictures/joinus.png" alt="Soumya Hiremath">
+                        <a href="mailto:info@aurabirthingpartner.com" style="text-decoration: none;">
+                            <div style="background-color: palevioletred; color: white; cursor: pointer;">
+                              <h4>Join Us</h4>
+                            </div>
+                          </a>
                       </div>
                   
                   </div>
