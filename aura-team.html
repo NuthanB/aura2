@@ -119,6 +119,46 @@
             font-size: 0.85rem;
             color: #777;
         }
+        
+        .team-card .compact-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.8em;
+        }
+
+        .team-card .full-text {
+            display: none;
+            margin-top: 0.4rem;
+            text-align: left;
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .team-card.expanded .compact-text {
+            display: none;
+        }
+
+        .team-card.expanded .full-text {
+            display: block;
+        }
+
+        .view-more-btn {
+            margin-top: 0.6rem;
+            border: none;
+            background: #a7239c;
+            color: #fff;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.8rem;
+            cursor: pointer;
+        }
+
+        .view-more-btn:hover {
+            background: #790870;
+        }
 
         @media (min-width: 768px) {
             .team-card img {
@@ -390,6 +430,30 @@
                                 Paediatric Dentist <br></h6>
                         </div>
                         <div class="team-card">
+                            <img src="./2023 Aura pictures/IMG-20231204-WA0022.jpg" alt="Dr. Dhanya Warrier">
+                            <h4>Dr. Dhanya Warrier</h4>
+                            <h6 class="compact-text">
+                                DNB (Pediatrics), Fellowship in Pediatric Cardiology (Narayana Hrudayalaya), German
+                                Board-Certified Pediatrician with 18 years of experience in child and adolescent
+                                medicine.
+                            </h6>
+                            <div class="full-text">
+                                <p><strong>DNB (Pediatrics), Fellowship in Pediatric Cardiology (Narayana Hrudayalaya)</strong></p>
+                                <p><strong>German board certified Pediatrician.</strong></p>
+                                <p>I have 18 years of experience in child and adolescent medicine. I believe pediatrics is not
+                                    just managing sick children, but it is a holistic approach in the development of a child
+                                    where parents and the pediatrician strive to maintain the physical, mental and social well
+                                    being of the child.</p>
+                                <p>I try to bring in internationally accepted best practices in well baby check ups with
+                                    regular follow up of milestones, basic management of psychosomatic diseases and
+                                    vaccinations with an aim to build a stronger generation.</p>
+                                <p>I work with a team of Counseling Psychologist, nutritionist and an experienced pediatric
+                                    nurse at FrohKids clinic. We strive to render good medical care to FrohKids parents and
+                                    bring a smile on their faces.</p>
+                            </div>
+                            <button type="button" class="view-more-btn js-toggle-profile">View more</button>
+                        </div>
+                        <div class="team-card">
                             <img src="./2023 Aura pictures/joinus.png" alt="Soumya Hiremath">
                             <h4>You can be Next!</h4>
                             <a href="mailto:info@aurabirthingpartner.com" style="text-decoration: none;">
@@ -403,7 +467,7 @@
                 </div>
             </section>
         </div>
-
+        
         <!--footer start-->
         <div id="contact" class="xtarget" style="background-color: rgb(141, 5, 61);">
             <footer class="footer widget-footer clearfix">
@@ -530,6 +594,15 @@
     <script src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
     <script src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script>
+        document.querySelectorAll('.js-toggle-profile').forEach(function (button) {
+            button.addEventListener('click', function () {
+                var card = button.closest('.team-card');
+                card.classList.toggle('expanded');
+                button.textContent = card.classList.contains('expanded') ? 'View less' : 'View more';
+            });
+        });
+    </script>
 
     <!-- Javascript end-->
 
