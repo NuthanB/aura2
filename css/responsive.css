@@ -1338,6 +1338,25 @@
 
 @media (max-width: 767px){
 
+	/* Dropdown arrow indicator — CSS only, no Font Awesome needed */
+	nav#menu li:has(> ul) > a {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	nav#menu li:has(> ul) > a::after {
+		content: '\276F';
+		flex-shrink: 0;
+		transform: rotate(90deg);
+		transition: transform 0.2s ease;
+		font-style: normal;
+		font-weight: bold;
+		color: inherit;
+	}
+	nav#menu li:has(> ul) > a.active::after {
+		transform: rotate(270deg);
+	}
+
 	/* Page-Title */
 	.title-box .page-title-heading h1{ font-size: 38px ; line-height: 38px; }
 
@@ -1484,7 +1503,7 @@ h2 {
 	    left: 20px;
 	    width: 250px;
 	}
-	#site-header-menu #site-navigation .menu ul.dropdown > li > a:after{ 
+	#site-header-menu #site-navigation .menu ul.dropdown > li > a:after{
 		right: -10px;
 	}
 
