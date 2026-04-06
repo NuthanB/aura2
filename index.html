@@ -28,10 +28,11 @@
     <noscript><link rel="stylesheet" href="css/flaticon.css"></noscript>
     <link rel="stylesheet" href="css/prettyPhoto.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="css/prettyPhoto.css"></noscript>
-    <link rel="stylesheet" type="text/css" href="css/shortcodes.css" />
+    <link rel="stylesheet" href="css/shortcodes.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/shortcodes.css"></noscript>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-    <script src="js/components.js"></script>
+    <script defer src="js/components.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZF0R8XQF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -39,10 +40,12 @@
         gtag('js', new Date());
         gtag('config', 'G-EKZF0R8XQF');
     </script>
-    <link rel="preload" as="image" href="2023 Aura pictures/cover.jpeg" fetchpriority="high">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="2023 Aura pictures/cover.webp" fetchpriority="high" type="image/webp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"></noscript>
 </head>
 <body style="background: linear-gradient(95deg, #F5F7F5, #F5F7F5);">
     <div class="page">
@@ -57,8 +60,11 @@
                             <a href="./prenatal-yoga-and-fitness.html">
                                 <div class="ads">
                                     <div class="ads-img">
-                                        <img class="logo-img11 filter-brightness" src="2023 Aura pictures/cover.jpeg" fetchpriority="high"
-                                            alt="Empower your Pregnancy Journey - Register Now for Prenatal Yoga and Fitness at Aura">
+                                        <picture>
+                                            <source srcset="2023 Aura pictures/cover.webp" type="image/webp">
+                                            <img class="logo-img11 filter-brightness" src="2023 Aura pictures/cover.jpeg" fetchpriority="high"
+                                                alt="Empower your Pregnancy Journey - Register Now for Prenatal Yoga and Fitness at Aura">
+                                        </picture>
                                     </div>
                                     <div class="ads-content">
                                         <p>Empower your <br>Pregnancy Journey</p>
@@ -187,9 +193,12 @@
                             <div class="ttm-box-bottom-content">
                                 <div class="featured-icon mb-20">
                                     <center>
-                                        <img class="img-fluid" src="./images/image-removebg-preview.png"
-                                            style="width:175px;"
-                                            alt="Infant Massage & Newborn Care - Infant massage icon" loading="lazy">
+                                        <picture>
+                                            <source srcset="./images/image-removebg-preview.webp" type="image/webp">
+                                            <img class="img-fluid" src="./images/image-removebg-preview.png"
+                                                style="width:175px;"
+                                                alt="Infant Massage & Newborn Care - Infant massage icon" loading="lazy">
+                                        </picture>
                                     </center>
                                 </div>
                                 <div class="featured-title featured-title">
@@ -363,9 +372,7 @@
 
     <!-- Revolution Slider -->
 
-
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-
 
     <!-- Javascript end-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

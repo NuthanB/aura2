@@ -46,14 +46,13 @@
 
     <!-- REVOLUTION LAYERS STYLES -->
 
-
-
     <!-- prettyphoto -->
     <link rel="stylesheet" href="css/prettyPhoto.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="css/prettyPhoto.css"></noscript>
 
     <!-- shortcodes -->
-    <link rel="stylesheet" type="text/css" href="css/shortcodes.css" />
+    <link rel="stylesheet" href="css/shortcodes.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/shortcodes.css"></noscript>
 
     <!-- main -->
     <link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -175,8 +174,12 @@
       margin-bottom: 10px;
     }
     </style>
-    <script src="js/components.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script defer src="js/components.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"></noscript>
 </head>
 
 <body style="background: #746b6c2a">
@@ -672,7 +675,6 @@
     </div>
     <!-- page end -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
 
     <script>
         const swiperTestmonials = new Swiper(".swiper-testmonials", {
