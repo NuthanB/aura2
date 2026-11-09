@@ -1,5 +1,17 @@
 {
     "cleanUrls": true,
+    "redirects": [
+    {
+      "source": "/aura-team",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/aura-team.html",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
     "rewrites": [
     {
       "source": "/login",
@@ -7,4 +19,3 @@
     }
   ]
 }
-  
